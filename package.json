@@ -2,7 +2,10 @@
   "name": "butter-component-list",
   "version": "0.6.0",
   "description": "A base React Component for Butter Project",
-  "main": "main_process.js",
+  "main": "electron/main.js",
+  "config": {
+    "forge": "./forge.config.js"
+  },
   "build": {
     "command": "webpack --config webpack.config.js --progress --profile --colors",
     "env": {
@@ -26,11 +29,14 @@
   },
   "homepage": "https://github.com/buttercomponents/butter-component-list#readme",
   "devDependencies": {
+    "@electron-forge/plugin-webpack": "^0.0.2",
     "butter-component-builder": "buttercomponents/butter-component-builder",
     "butter-provider-ccc": "butterproviders/butter-provider-ccc",
     "butter-provider-vodo": "butterproviders/butter-provider-vodo",
     "electron": "^2.0.0",
     "electron-devtools-installer": "^2.2.4",
+    "electron-forge": "^5.2.2",
+    "electron-prebuilt-compile": "2.0.0",
     "electron-reload": "^1.2.2",
     "npm-run-all": "^4.1.3"
   },
