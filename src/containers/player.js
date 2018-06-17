@@ -73,8 +73,9 @@ const startStreamer = (props) => {
     }
 }
 
-const processExtraProps = (item, {streamer}) => ({
+const processExtraProps = (item, {streamer, stats}) => ({
     streamer,
+    stats
 })
 
 const PlayerMovieContainer = connectItem(

@@ -19,6 +19,7 @@ import markers from './redux/markers'
 import filters from './redux/filters'
 import streamer from './redux/streamer'
 import settings from './redux/settings'
+import stats from './redux/stats'
 
 import {remote} from 'electron'
 
@@ -108,6 +109,7 @@ const buildRootReducer = (tabs, cachedSettings, cache) => {
     markers: markers.reducer,
     filters: filters.reducer,
     streamer: streamer.reducer,
+    stats: stats.reducer,
     settings: settings.reducerCreator(cachedSettings),
     router: routerReducer,
     cache: () => cache,

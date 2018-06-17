@@ -4,16 +4,17 @@ import Video from 'butter-component-video';
 
 const Identity = a => a
 
-const Player = ({id, isFetching, streamer, goBack}) => {
+const Player = ({id, isFetching, streamer, stats, goBack}) => {
   return (
-    <div>
-        {isFetching ? <p>Loading...</p>
-         : streamer.loading || ! streamer.url ? <p>Caching...</p>
-         : <Video autoPlay goBack={goBack}>
-             <source src={streamer.url} />
-         </Video>
-        }
-    </div>
+      <div>
+          <span>{JSON.stringify(stats)}</span>
+          {isFetching ? <p>Loading...</p>
+           : streamer.loading || ! streamer.url ? <p>Caching...</p>
+           : <Video autoPlay goBack={goBack}>
+               <source src={streamer.url} />
+           </Video>
+          }
+      </div>
   )
 }
 
